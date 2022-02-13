@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Covid-19 Case Study</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Ramone Johnson</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Projects</a></li>
+							<!--
+							<li><a href="generic.html">Generic Page</a></li>
+							-->
+							<li class="active"><a href="elements.html">Covid-19</a></li>
+							<li><a href="resume.html">Resume</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://linkedin.com/in/ramone-johnson-82908b156" class="icon brands alt fa-linkedin"><span class="label">linkedIn</span></a></li>
+							<li><a href="https://github.com/rjohn151" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Covid-19 Case Study<br />
+									</h1>
+								</header>
+
+								<!-- Text stuff -->
+									<h2>Introduction</h2>
+									<p>Welcome to the Covid-19 Worldwide impact analysis case study! In this case study, I will be performing real-world tasks of a junior data analyst to get a better understanding of the data. I picked this topic as its affected each and every one of us in one way or another whether you’ve had covid yourself or had a family member or friend go through the symptoms. In order to effectively answer the questions that I considered important, I will be following these key steps of the data analysis process: ask, prepare, process, analyze, share, and act.</p>
+									<hr />
+								
+									<h2>Scenario</h2>
+									<p>I am a junior data analyst working for the healthcare data analyst department at Baptist Hospital of South Florida. The Director of the Imaging department wants to understand the forecasted population rate of the infected people in Florida, the United States and also around the world. Therefore, analyzing the most infected population by comparison, how many people are vaccinated, and how many are not vaccinated. From these insights, the team and I will help the hospital improve ways to get more people vaccinated and to try and decline the projected numbers. However, the Director must approve of the recommendations, so they must be backed with captivating data visualizations and data insights.</p>
+									<hr />
+								
+									<h2>Ask Phase</h2>
+									<p>The stakeholder who is also the Director has an objective to understand how much worse the infected covid-19 population rate was going to be for the entire state of Florida by drawing comparisons to the United States, and the rest of the world. The task was to identify how many people were not vaccinated in the United States and find ways to get the more people vaccinated to stop the infected rate from increasing. We will go through the data of those who are vaccinated vs those who aren’t to compare and assess the differences between them in different metrics. The audience as stated before is everyone as we all have come in contact with covid. By making a decision that’s constructed around the data this is the best way to come to a logical conclusion. By solving this problem we could use the insights to see why some people are still not vaccinated.</p>
+									<hr />
+								
+									<h2>Prepare Phase</h2>
+									<p>The information we are analyzing is real-world data that can be found on the website <a href="https://ourworldindata.org/covid-deaths">www.ourworldindata.org/covid-deaths</a> for the purpose of studying our case and answering the questions that needs to be uncovered. For this project, the downloaded CSV file was from the earliest date of February 15, 2020 to February 2022 and stored the data in a folder of the capstone project folder. The data was imported from the csv file into a Microsoft SQL Server to be sorted and filtered to better understand the different types of information gathered. There is no bias as the data is gathered from a reputable .org website with only factual information of the matter. Therefore, the data is reliable, original, comprehensive, current, and cited. The data does not have any private information that reveals anything about anybody. This is all publicly collected information. So far there are no issues with the data as it is updated each and every day. The data is in raw format therefore it will be cleaned to perform the analysis needed.</p>
+									<hr />
+								
+									<h2>Process Phase</h2>
+									<p>For this dataset, excel was used to get a quick glimpse data but because the dataset is so large. Microsoft SQL Server was utilized to sort and filter the data accordingly. By cleaning the data through filtering and sorting it makes the information more usable for analysis. Afterwards, Tableau was used to import the data from the SQL server to better visualize the data that was analyzed to create a dashboard that catches the eye in less than five seconds. As previously stated the data does not have any private information that reveals anything about anybody as this is all publicly collected information. .</p>
+									<hr />
+								
+									<h2>Analyze Phase</h2>
+									<p>The data is organized in the best way to fit the requirements that we set. The data was prepared and process in our previous steps that was discussed before. To format the data, different tables were joined together either by location or date to get the percent of the population that was vaccinated to illustrate which country had the highest vaccination rate. During this project, we utilized Tableau to visually demonstrate the forecasted population rate increase of the country that will have the highest infection rate by the end of 2022. Another interesting concept was identifying what continent had the highest death tally compared to the rest.</p>
+									<hr />
+								
+									<h2>Share Phase</h2>
+									<p>The data extracted allowed us to answer the questions the stakeholder posed as we figured out the forecasted population infected rate for the rest of the United States and some other countries. The story being told by the data illustrates. The best way for the stakeholders to understand the information that was manipulated and transformed was to create a Tableau dashboard so they could visually digest the data. .</p>
+									<a href="https://public.tableau.com/app/profile/ramone.johnson/viz/COVID-19Dashboard_16439218345830/Dashboard1" class="image fit"><img src="images/FPRI.jpg" alt="" /></a>	
+									<hr />
+								
+									<h2>Act Phase</h2>
+									<p>I think I could've perhaps dug deeper to figure out why the United States top the tally for the country with the most deaths from COVID-19 by maybe doing a comparison of how many people were vaccinated and the total cases. There are many ways of going about dissecting data there is never only one true method of coming to a conclusion.</p>
+									<hr />
+
+
+
+								<!-- Preformatted Code -->
+									<h2>SQL CODE</h2>
+									<pre><code>
+SELECT location, population, MAX(total_cases) AS HighestInfectionCount, MAX((total_cases/population)) * 100 AS Infected
+FROM CovidDeaths
+GROUP BY location, population
+ORDER BY 4 
+
+SELECT location, population, MAX(total_cases) AS Total_Cases, MAX(total_deaths) AS DeathCount, MAX((total_deaths/total_cases)) * 100 AS DeathPercent
+FROM CovidDeaths
+GROUP BY location, population
+ORDER BY DeathPercent DESC
+
+SELECT continent, MAX(cast(total_deaths as INT)) AS DeathCount
+FROM CovidDeaths
+WHERE continent is not null
+GROUP BY continent
+ORDER BY DeathCount DESC
+</code></pre>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<section class="split contact">
+							<section>
+								<h3>Email</h3>
+								<p>rjohn151@fiu.edu</p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+								<li><a href="https://linkedin.com/in/ramone-johnson-82908b156" class="icon brands alt fa-linkedin"><span class="label">linkedIn</span></a></li>
+								<li><a href="https://github.com/rjohn151" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Ramone Johnson</li><li>Design: <a href="https://rjohn151.github.io/Johnson.github.io/">Github</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
