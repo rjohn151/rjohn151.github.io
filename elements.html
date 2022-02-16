@@ -129,6 +129,22 @@ SELECT *, (RollingPeopleVaccinated/population) * 100 AS RPC_Percent
 FROM #PercentPopulationVaccinated
 
 --END OF TEMP TABLE
+
+--CREATE VIEW to store data for later visualizations(Tableau)
+--Using the MAX function to get the maximum number of total deaths
+--Using the CAST function to change the data type to integer
+CREATE VIEW WorldWideDeaths AS
+SELECT continent, MAX(cast(total_deaths as INT)) AS DeathCount
+FROM CovidDeaths
+WHERE continent is not null
+GROUP BY continent
+--ORDER BY DeathCount DESC
+
+--Viewing the view created
+SELECT *
+FROM WorldWideDeaths
+--END OF VIEW
+
 </code></pre>
 
 							</section>
